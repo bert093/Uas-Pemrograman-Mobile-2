@@ -1,2 +1,2 @@
 # Uas Pemrograman Mobile 2
- Soal Uas
+ Uas dilaksanakan sejak 5 juli 2024
