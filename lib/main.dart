@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:uas_flutter_d1/Uisyahril/SyahrilLogin.dart';
+// import 'package:uas_flutter_d1/Uisyahril/syahrilDataBarangtest.dart';
 import 'package:uas_flutter_d1/Uisyahril/SyahrilRegis.dart';
 
 void main() {
