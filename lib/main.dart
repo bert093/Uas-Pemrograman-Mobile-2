@@ -6,7 +6,6 @@ import 'package:uas_flutter_d1/Uisyahril/SyahrilRegis.dart';
 void main() {
   runApp(const MainApp());
 }
-
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
