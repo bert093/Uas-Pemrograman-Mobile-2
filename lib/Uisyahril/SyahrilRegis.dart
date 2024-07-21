@@ -12,10 +12,8 @@ class _UserProfileFormState extends State<RegisterUas> {
   // Controllers for text fields
   final TextEditingController _namaController = TextEditingController();
   final TextEditingController _tlpnController = TextEditingController();
-  final TextEditingController _emailController =
-      TextEditingController(); // Menambahkan Email Controller
-  final TextEditingController _pswdController =
-      TextEditingController(); // Menambahkan Password Controller
+  final TextEditingController _emailController = TextEditingController(); // Menambahkan Email Controller
+  final TextEditingController _pswdController = TextEditingController(); // Menambahkan Password Controller
 
   // Variables for other inputs
   bool _setuju = false;
@@ -37,6 +35,33 @@ class _UserProfileFormState extends State<RegisterUas> {
     String email = _emailController.text; // menambahkan email controller
     String password = _pswdController.text;
 
+    // if (!email.endsWith('@gmail.com')) {
+    //   showDialog(
+    //     context: context,
+    //     builder: (BuildContext context) {
+    //       return AlertDialog(
+    //         title: Text('Kesalahan !!!'),
+    //         content: Text('Email harus diakhiri dengan @gmail.com'),
+    //         actions: <Widget>[
+    //           TextButton(
+    //             child: Text('OK'),
+    //             onPressed: () {
+    //               Navigator.of(context).pop();
+    //             },
+    //           ),
+    //         ],
+    //       );
+    //     },
+    //   );
+    // } else {
+    //   Navigator.push(context,
+    //     MaterialPageRoute(builder: (context) => LoginUas(
+    //       registeredNama02: nama,
+    //       registeredEmail02: email, 
+    //       registeredPassword02: password)),
+    //   );
+    // }
+
     if (nama.isEmpty || email.isEmpty || password.isEmpty || _jenisKelamin.isEmpty || _pilihKota == '<pilih>' || _tlpnController.text.isEmpty || _setuju == false) {
       // menambahkan kondisi yang kosong
       showDialog(
@@ -46,6 +71,25 @@ class _UserProfileFormState extends State<RegisterUas> {
             title: Text('Kesalahan !!'),
             content:
                 Text('Nama, email, password, jenis kelamin, pilih kota, persetujuan, dan nomor telepon tidak boleh kosong'),
+            actions: <Widget>[
+              TextButton(
+                child: Text('OK'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        },
+      );
+    } else if (!email.endsWith('@gmail.com')) {
+      // menambahkan kondisi email harus diakhiri dengan @gmail.com
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Kesalahan !!'),
+            content: Text('Email harus diakhiri dengan @gmail.com'),
             actions: <Widget>[
               TextButton(
                 child: Text('OK'),
